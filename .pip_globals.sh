@@ -6,12 +6,8 @@ function pip_install_globals() {
 }
 
 globals=(
-  aws
-  awscli
-  choosealicense-cli
-  harvey
-  httpie
-  saws
+pandas
+networkx
 )
 
 # Start the actual installation of the recipes
