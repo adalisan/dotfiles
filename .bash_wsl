@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+export DISPLAY=:0 #The basic Display variable required for graphical programs to work with the windows Xserver.
+export XDG_RUNTIME_DIR=$HOME/bin/xdg #This isnt set by default i made a temporary dir in my home folder  yand it exports there. 
+export RUNLEVEL=3 #System Runlevel required for some apps to install without warnings. 
+#sudo mkdir /var/run/dbus #required for the dbus fix.
