@@ -133,3 +133,9 @@ export SCM_CHECK=true
 #PATH=~/bin:$PATH
 
 source $BASH_IT/bash_it.sh
+<<<<<<< HEAD
+=======
+#-[ -n "$PS1" ] && source ~/.bash_profile;
+export DISPLAY=:0
+source $HOME/.bash_wsl
+>>>>>>> 63a1fc4... try to fix prompt. add-remove pip installs
