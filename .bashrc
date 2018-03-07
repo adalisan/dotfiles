@@ -54,8 +54,69 @@ fi
 if [ "$color_prompt" = yes ]; then
 #    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+
+fi
+# Other variables.
+export EDITOR=micro
+#export PAGER=less
+
+export RAID_PRIV_DIR=/nfs/mercury-11/u113
+
+export ALADDIN_PROJ_ROOTDIR=${RAID}/projects/aladdin
+export ALADDIN_PROJ_DATA=${ALADDIN_PROJ_ROOTDIR}/data
+export PLAYGROUND=~/runjobs_playground
+export DEV_SPACE=~/projects/aladdin/dev
+export PATH=/d4m/ws/bin:$PATH
+export PATH=/home/sadali/local/bin:$PATH
+export PATH=${RAID}/bin:$PATH
+export PATH=${RAID}/bin/gsutil:$PATH
+export CPATH=/usr/include
+
+
+#extra software
+export PATH=/opt/git-2.14.1-x86_64/bin:$PATH
+export PATH=${RAID}/local/vscode/VSCode-linux-x64:$PATH
+export PATH=/nfs/mercury-11/u104/pycharm-community-2017.2.1/bin:$PATH
+export PATH=/opt/gnuplot-4.6.6-x86_64/bin:$PATH
+export PATH=/nfs/mercury-11/u104/ST3:$PATH
+
+
+
+#if [[ `hostname -s` -eq d400 ]]; then
+#     export LD_LIBRARY_PATH=/home/sadali/local/lib:$LD_LIBRARY_PATH
+#     export LD_LIBRARY_PATH=/home/sadali/local/lib64:$LD_LIBRARY_PATH
+#     export LD_LIBRARY_PATH=/opt/gcc-4.8.3-x86_64/lib/:$LD_LIBRARY_PATH
+#     export LD_LIBRARY_PATH=/opt/gcc-4.8.3-x86_64/lib64/:$LD_LIBRARY_PATH
+#fi
+
+# Aladdin scripts for feature manip, munging, file conversion
+export PATH=/home/sadali/aladdin_dev/data_tools:$PATH
+
+
+#
+export MY_AUTOCONF=/opt/autoconf-2.69${ARCH_SUFFIX}
+#setenv MY_AUTOMAKE   /home/sadali/local/bin/automake
+export FORCE_GCC_4_9=true
+
+#use 5.3 GCC for building graph-tool
+
+if [[ -d /opt/gcc-5.3.0${ARCH_SUFFIX}/ &&  "${FORCE_GCC_4_9}" != true ]]; then
+export MY_COMPILER=/opt/gcc-5.3.0${ARCH_SUFFIX}/
+export CPATH=/opt/gcc-5.3.0${ARCH_SUFFIX}/include
+export LIBRARY_PATH=/opt/gcc-5.3.0${ARCH_SUFFIX}/lib64:/opt/gcc-5.3.0${ARCH_SUFFIX}/lib:$LIBRARY_PATH
+export PATH=/opt/gcc-5.3.0-x86_64/bin:$PATH
+
+# Use 4.9 GCC (similar to the one built at toast
+elif [[ -d /opt/gcc-4.9.1${ARCH_SUFFIX}/  ]]; then
+export MY_COMPILER=/opt/gcc-4.9.1${ARCH_SUFFIX}
+export LIBRARY_PATH=/opt/gcc-4.9.1${ARCH_SUFFIX}/lib64:/opt/gcc-4.9.1${ARCH_SUFFIX}/lib:$LIBRARY_PATH
+export LD_LIBRARY_PATH=/opt/gcc-4.9.1${ARCH_SUFFIX}/lib64:/opt/gcc-4.9.1${ARCH_SUFFIX}/lib:${LD_LIBRARY_PATH}
+export PATH=/opt/gcc-4.9.1-x86_64/bin:$PATH
+export CPATH=/opt/gcc-4.9.1-x86_64/include
+export CPLUS_INCLUDE_PATH=/opt/gcc-4.9.1-x86_64/include:/opt/gcc-4.9.1-x86_64/include/c++/4.9.1:$CPLUS_INCLUDE_PATH
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+export  MY_COMPILER=/usr
+>>>>>>> b826d9d... fixed bugs
 fi
 unset color_prompt force_color_prompt
 
