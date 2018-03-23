@@ -19,9 +19,9 @@ if grep -q "release 5\." /etc/redhat-release; then
 elif grep -q "release 6\." /etc/redhat-release; then
     BUE_BASHRC="bue_bashrc_sl6";
 else
-    BUE_BASHRC="bue_bashrc_sl6";
+#    BUE_BASHRC="$HOME/.bue_bashrc_centos7";
     echo "Unknown Linux release. Probably SL7";
-#    BUE_BASHRC="bue_bashrc_unknown";
+    BUE_BASHRC="bue_bashrc_unknown";
 fi
 
 
@@ -34,6 +34,9 @@ if [ -r /etc/$BUE_BASHRC ]; then
 elif [ -r /d4m/ears/source_files/$BUE_BASHRC ]; then
     . /d4m/ears/source_files/$BUE_BASHRC
     echo "called bue bashrc from d4m_ears"
+elif [ -r $BUE_BASHRC ]; then
+    . $BUE_BASHRC
+    echo "called bue bashrc from home"
 else
     echo "Unable to find $BUE_BASHRC.  Settings not loaded."
 fi
@@ -249,10 +252,11 @@ export LD_LIBRARY_PATH=${R_HOME}/lib64:${R_HOME}/lib:$LD_LIBRARY_PATH
 
 #export MY_PERL=/opt/perl-5.14.1${ARCH_SUFFIX}/
 export PATH=$MY_PERL/bin:$PATH
-export PERL5LIB=/home/sadali/local/perl_lib:/home/sadali/local/perl_lib/share/perl5:/home/sadali/local/perl_lib/lib/site_perl
-export PERL5LIB=${R_HOME}/library/RSPerl/perl:$PERL5LIB
+#export PERL5LIB=/home/sadali/local/perl_lib:/home/sadali/local/perl_lib/share/perl5:/home/sadali/local/perl_lib/lib/site_perl
+#export PERL5LIB=${R_HOME}/library/RSPerl/perl:$PERL5LIB
 export MY_CUBE2=/d4m/ears/releases/Cube2/R2015_09_11
-export PERL5LIB=/home/sadali/perl5:/home/sadali/perl5/lib/perl5:${MY_CUBE2}/install-optimize$ARCH_SUFFIX/perl_lib:${MY_CUBE2}/install-optimize$ARCH_SUFFIX/scripts:$PERL5LIB
+#export PERL5LIB=/home/sadali/perl5:/home/sadali/perl5/lib/perl5:$PERL5LIB
+export PERL5LIB=${MY_CUBE2}/install-optimize$ARCH_SUFFIX/perl_lib:${MY_CUBE2}/install-optimize$ARCH_SUFFIX/scripts:$PERL5LIB
 export PATH=${MY_CUBE2}/install-optimize-x86_64/bin:$PATH
 
 #ALADDIN
@@ -295,7 +299,9 @@ fi
 
 #source ~/.bash.aladdin.sh
 export LD_LIBRARY_PATH=/opt/x264-snapshot-20140708-2245-stable-x86_64/lib:$LD_LIBRARY_PATH
-
+if [[ `hostname -s` == "ag400" ]]; then
+export LD_LIBRARY_PATH=/usr/lib64:$LD_LIBRARY_PATH
+fi
 
 ## THEMING and CUSTOMIZATION
 # #powerline
@@ -315,7 +321,8 @@ export BASH_IT="$HOME/.bash_it"
 # Lock and Load a custom theme file
 # location /.bash_it/themes/
 
-export BASH_IT_THEME='powerline-multiline'
+#export BASH_IT_THEME='powerline-multiline'
+export BASH_IT_THEME='powerline-plain'
 
 # (Advanced): Change this to the name of your remote repo if you
 # cloned bash-it with a remote other than origin such as `bash-it`.
