@@ -101,17 +101,16 @@ if [ "$color_prompt" = yes ]; then
 # export  PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
 fi
 # Other variables.
+
 export EDITOR=micro
 #export PAGER=less
 
-export RAID_PRIV_DIR=/nfs/mercury-11/u113
-
 export ALADDIN_PROJ_ROOTDIR=${RAID}/projects/aladdin
 export ALADDIN_PROJ_DATA=${ALADDIN_PROJ_ROOTDIR}/data
-export PLAYGROUND=~/runjobs_playground
-export DEV_SPACE=~/projects/aladdin/dev
+export DEV_SPACE=/home/sadali/projects/aladdin/dev
+
 export PATH=/d4m/ws/bin:$PATH
-export PATH=/home/sadali/local/bin:$PATH
+export PATH=/home/sadali/local/bin:/home/sadali/bin:$PATH
 export PATH=${RAID}/bin:$PATH
 export PATH=${RAID}/bin/gsutil:$PATH
 export CPATH=/usr/include
@@ -124,20 +123,12 @@ export PATH=/nfs/mercury-11/u104/pycharm-community-2017.2.1/bin:$PATH
 export PATH=/opt/gnuplot-4.6.6-x86_64/bin:$PATH
 export PATH=/nfs/mercury-11/u104/ST3:$PATH
 
-
-
-#if [[ `hostname -s` -eq d400 ]]; then
-#     export LD_LIBRARY_PATH=/home/sadali/local/lib:$LD_LIBRARY_PATH
-#     export LD_LIBRARY_PATH=/home/sadali/local/lib64:$LD_LIBRARY_PATH
-#     export LD_LIBRARY_PATH=/opt/gcc-4.8.3-x86_64/lib/:$LD_LIBRARY_PATH
-#     export LD_LIBRARY_PATH=/opt/gcc-4.8.3-x86_64/lib64/:$LD_LIBRARY_PATH
-#fi
-
 # Aladdin scripts for feature manip, munging, file conversion
 export PATH=/home/sadali/aladdin_dev/data_tools:$PATH
 
-
-#
+######################
+# COMPILING AND BUILDING
+#########
 export MY_AUTOCONF=/opt/autoconf-2.69${ARCH_SUFFIX}
 #setenv MY_AUTOMAKE   /home/sadali/local/bin/automake
 export FORCE_GCC_4_9=true
@@ -162,7 +153,6 @@ else
 export  MY_COMPILER=/usr
 fi
 
-
 export PATH=${MY_COMPILER}/bin:$PATH
 
 
@@ -170,10 +160,6 @@ export PATH=${MY_COMPILER}/bin:$PATH
 export MY_CMAKE=/opt/cmake-2.8.12.2-x86_64
 export CMAKE_C_COMPILER=$MY_COMPILER/bin/gcc
 export CMAKE_CXX_COMPILER=$MY_COMPILER/bin/g++
-
-
-#export LD_LIBRARY_PATH=/home/swu/local/lib:$LD_LIBRARY_PATH
-#export LD_LIBRARY_PATH=/home/swu/local/lib64:$LD_LIBRARY_PATH
 
 
 export MY_JAVA=/opt/jdk1.8.0_20-x86_64
@@ -243,8 +229,10 @@ fi
 
 . /home/sadali/local/anaconda/etc/profile.d/conda.sh
 
+
+
 # Set R Related dirs
-export R_HOME=${RAID_PRIV_DIR}/local/R-3.2.2
+export R_HOME=${RAID}/local/R-3.2.2
 export MY_R=${R_HOME}/bin/R
 export PATH=${R_HOME}/bin:$PATH
 export LD_LIBRARY_PATH=${R_HOME}/lib64:${R_HOME}/lib:$LD_LIBRARY_PATH
@@ -256,7 +244,8 @@ export PATH=$MY_PERL/bin:$PATH
 #export PERL5LIB=${R_HOME}/library/RSPerl/perl:$PERL5LIB
 export MY_CUBE2=/d4m/ears/releases/Cube2/R2015_09_11
 #export PERL5LIB=/home/sadali/perl5:/home/sadali/perl5/lib/perl5:$PERL5LIB
-export PERL5LIB=${MY_CUBE2}/install-optimize$ARCH_SUFFIX/perl_lib:${MY_CUBE2}/install-optimize$ARCH_SUFFIX/scripts:$PERL5LIB
+export PERL5LIB=${MY_CUBE2}/install-optimize$ARCH_SUFFIX/perl_lib:$PERL5LIB
+export PERL5LIB=${MY_CUBE2}/install-optimize$ARCH_SUFFIX/scripts:$PERL5LIB
 export PATH=${MY_CUBE2}/install-optimize-x86_64/bin:$PATH
 
 #ALADDIN
@@ -284,31 +273,25 @@ export USE_BREW=0
 if [[ $USE_BREW -eq 1 ]]; then
   echo "Using linuxbrew"
   source ~/.bash_brew
-
 fi
 
 
-#export NVM_DIR="/home/sadali/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  
-
-# This loads nvm
 
 # Path to the bash it configuration
 
 # # Requirements for caffe builds
 
-#source ~/.bash.aladdin.sh
 export LD_LIBRARY_PATH=/opt/x264-snapshot-20140708-2245-stable-x86_64/lib:$LD_LIBRARY_PATH
 if [[ `hostname -s` == "ag400" ]]; then
 export LD_LIBRARY_PATH=/usr/lib64:$LD_LIBRARY_PATH
+echo "added /usr/lib64 to ld library path so that DE runs with right GL libraries linked to latest nvidia  libs on ag400"
 fi
-
+##########################
 ## THEMING and CUSTOMIZATION
+############
+
 # #powerline
 # export PATH=/home/sadali/xiki/bin:$PATH
-
-
-
 
 #export POWERLINE=/nfs/mercury-11/u113/local/anaconda/lib/python2.7/site-packages
 # #. $POWERLINE/powerline/bindings/bash/powerline.sh
@@ -328,14 +311,8 @@ export BASH_IT_THEME='powerline-plain'
 # cloned bash-it with a remote other than origin such as `bash-it`.
 # export BASH_IT_REMOTE='bash-it'
 
-
-
 # Don't check mail when opening terminal.
 unset MAILCHECK
-
-# Change this to your console based IRC client of choice.
-#export IRC_CLIENT='irssi'
-
 
 # Set this to false to turn off version control status checking within the prompt for all themes
 export SCM_CHECK=true
@@ -343,7 +320,7 @@ export SCM_CHECK=true
 # Set Xterm/screen/Tmux title with only a short hostname.
 # Uncomment this (or set SHORT_HOSTNAME to something else),
 # Will otherwise fall back on $HOSTNAME.
-#export SHORT_HOSTNAME=$(hostname -s)
+export SHORT_HOSTNAME=$(hostname -s)
 
 # Set vcprompt executable path for scm advance info in prompt (demula theme)
 # https://github.com/djl/vcprompt
@@ -352,12 +329,9 @@ export SCM_CHECK=true
 # (Advanced): Uncomment this to make Bash-it reload itself automatically
 # after enabling or disabling aliases, plugins, and completions.
 # export BASH_IT_AUTOMATIC_RELOAD_AFTER_CONFIG_CHANGE=1
-# >>>>>>> merge conflict
-
 
 # Your place for hosting Git repos. I use this for private repos.
 export GIT_HOSTING='git@github.com'
-
 
 # Set this to the command you use for todo.txt-cli
 export TODO="t"
@@ -367,30 +341,15 @@ export TODO="t"
 #export VCPROMPT_EXECUTABLE=~/.vcprompt/bin/vcprompt
 
 echo -ne "Today is "; date
-
 echo -e ""; cal ;
-
+if [[ -x "/opt/SGE-Tools-3.0.11-x86_64/bin/sg_list" ]]; then
+echo "current jobs"
 sg_list -srp -usadali
+fi
 
-alias myjobs='sg_list -srp -usadali'
-alias monjobs='watch sg_list -srp -usadali'
 # Load Bash It
 source $BASH_IT/bash_it.sh
 
 #[ -n "$PS1" ] && source ~/.bash_profile;
-
-# Some usable functions
-export SCRIPTS="$RAID/local/buetext"
-function execute () {
-	#script=$1
-	python  $SCRIPTS/$1.py "${@:2}"
-}
-alias execute="$PYTHON  $SCRIPTS/"
-alias executewhat='execute what'
 alias
-function exp() {
-  cd /d4m/ears/expts/$1/sequences
-}
-function vid_exp() {
-  cd /d4m/vid/expts/$1/sequences
-}
+
