@@ -1,8 +1,8 @@
 # Make Tab autocomplete regardless of filename case
-set completion-ignore-case on
+set completion-ignore-case off
 
 # List all matches in case multiple possible completions are possible
-set show-all-if-ambiguous on
+set show-all-if-ambiguous off
 
 # Immediately add a trailing slash when autocompleting symlinks to directories
 set mark-symlinked-directories on
@@ -19,7 +19,7 @@ set match-hidden-files off
 set page-completions off
 
 # If there are more than 200 possible completions for a word, ask to show them all
-set completion-query-items 200
+set completion-query-items 20
 
 # Show extra file information when completing, like `ls -F` does
 set visible-stats on
@@ -35,6 +35,7 @@ set skip-completed-text on
 set input-meta on
 set output-meta on
 set convert-meta off
+
 
 # Use Alt/Meta + Delete to delete the preceding word
 "\e[3;3~": kill-word
