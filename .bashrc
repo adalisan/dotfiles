@@ -84,7 +84,9 @@ echo -ne "Today is "; date
 echo -e ""; cal ;
 
 # Load Bash It
-#source $BASH_IT/bash_it.sh
+echo "Sourcing bash it at $BASH_IT"
+
+source $BASH_IT/bash_it.sh
 VNCCONFIG=`which  vncconfig`
 if [[ -z $VNCCONFIG  ]]; then
 vncconfig -iconic &
