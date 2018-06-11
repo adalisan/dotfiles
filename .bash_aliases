@@ -2,7 +2,6 @@ alias sudo=/usr/bin/sudo
 alias myjobs='sg_list -srp -usadali'
 alias monjobs='watch sg_list -srp -usadali'
 alias vncconfig='vncconfig -iconic'
-
 # Some usable functions
 export SCRIPTS="$RAID/local/buetext"
 function execute () {
