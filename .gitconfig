@@ -188,8 +188,8 @@ precomposeunicode = false
 
 	insteadOf = "gist:"
 [user]
-	name = Ahmad Assaf
-	email = ahmad.a.assaf@gmail.com
+	name = Sancar Adali
+	email = sadali+git@gmail.com
 [difftool "Kaleidoscope"]
 	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 	prompt = false
@@ -215,7 +215,7 @@ precomposeunicode = false
 	smudge = git hawser smudge %f
 	required = true
 [commit]
-	template = /Users/ahmadassaf/.git_commit_message.txt
+	template = $HOME/.git_commit_message.txt
 [filter "lfs"]
 	smudge = git-lfs smudge %f
 	required = true
