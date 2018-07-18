@@ -39,13 +39,14 @@ fi
 
 
 # Path to the bash it configuration
-export BASH_IT="/home/sadali/.bash_it"
-
+#export BASH_IT="/home/sadali/.bash_it"
+export BASH_IT="/home/sadali/.bash_it_local"
 # Lock and Load a custom theme file
 # location /.bash_it/themes/
 
 #export BASH_IT_THEME='powerline-multiline'
 export BASH_IT_THEME='powerline-plain'
+#export BASH_IT_THEME='tylenol'
 
 # (Advanced): Change this to the name of your remote repo if you
 # cloned bash-it with a remote other than origin such as `bash-it`.
@@ -85,8 +86,9 @@ echo -e ""; cal ;
 
 # Load Bash It
 echo "Sourcing bash it at $BASH_IT"
-
 source $BASH_IT/bash_it.sh
+
+
 VNCCONFIG=`which  vncconfig`
 if [[ -z $VNCCONFIG  ]]; then
 vncconfig -iconic &
@@ -94,3 +96,7 @@ fi
 #source $RAID/local/buetext/bash/bash_functions
 #[ -n "$PS1" ] && source ~/.bash_profile;
 
+#export FFMPEG_BIN=`which ffmpeg`
+export GAIA_INTERCHANGE=/nfs/mercury-11/u125/sadali/projects/gaia-interchange
+#sh -c "em-show --entered-by sadali > ~/my_experiments" 2>/dev/null &
+#export PATH=/home/sadali/bin:$PATH
