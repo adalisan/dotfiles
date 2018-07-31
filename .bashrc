@@ -100,3 +100,5 @@ fi
 export GAIA_INTERCHANGE=/nfs/mercury-11/u125/sadali/projects/gaia-interchange
 #sh -c "em-show --entered-by sadali > ~/my_experiments" 2>/dev/null &
 #export PATH=/home/sadali/bin:$PATH
+echo "My variables"
+echo $(env | grep 'MY')

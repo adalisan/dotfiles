@@ -23,6 +23,12 @@ function pr() {
  cd $(pwd -P)
 }
 
+function raiddir() {
+ pushd /home/sadali/rd/$1
+ cd $(pwd -P)
+}
+
+
 function bkp() {
  if [ ! -e $1.bak ]; then
  cp $1 $1.bak
