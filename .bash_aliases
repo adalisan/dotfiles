@@ -37,4 +37,15 @@ function bkp() {
  fi
 }
 
+function new_bs() {
+newscript=$(pwd)/$1.bash
+cp -n $HOME/bin/shell-scripts/simpleScriptTemplate.sh $newscript
+chmod +x $newscript
+mi $newscript
+}
+
+function cenv() {
+conda activate $1
+}
+
 source ~/.aliases
