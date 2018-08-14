@@ -159,3 +159,4 @@ source $BASH_IT/bash_it.sh
 #-[ -n "$PS1" ] && source ~/.bash_profile;
 export DISPLAY=:0
 source $HOME/.bash_wsl
+PATH=~/bin:$PATH
