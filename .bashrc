@@ -167,4 +167,11 @@ export ZSH_SHELL=$(command -v zsh)
 #exec $ZSH_SHELL
 #fi
 
-export KAGGLE_CONFIG_DIR=$RAID/.kaggle
+
+
+# Load Bash It
+source $BASH_IT/bash_it.sh
+#-[ -n "$PS1" ] && source ~/.bash_profile;
+export DISPLAY=:0
+source $HOME/.bash_wsl
+PATH=~/bin:$PATH
