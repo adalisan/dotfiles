@@ -40,7 +40,7 @@ fi
 
 # Path to the bash it configuration
 #export BASH_IT="/home/sadali/.bash_it"
-export BASH_IT="/home/sadali/.bash_it_local"
+#export BASH_IT="/home/sadali/.bash_it_local"
 # Lock and Load a custom theme file
 # location /.bash_it/themes/
 
@@ -85,8 +85,8 @@ echo -ne "Today is "; date
 echo -e ""; cal ;
 
 # Load Bash It
-echo "Sourcing bash it at $BASH_IT"
-source $BASH_IT/bash_it.sh
+#echo "Sourcing bash it at $BASH_IT"
+#source $BASH_IT/bash_it.sh
 
 
 VNCCONFIG=`which  vncconfig`
@@ -102,3 +102,19 @@ export GAIA_INTERCHANGE=/nfs/mercury-11/u125/sadali/projects/gaia-interchange
 #export PATH=/home/sadali/bin:$PATH
 echo "My variables"
 echo $(env | grep 'MY')
+
+
+git config --global color.ui true
+
+git config --global color.diff-highlight.oldNormal    "red bold"
+git config --global color.diff-highlight.oldHighlight "red bold 52"
+git config --global color.diff-highlight.newNormal    "green bold"
+git config --global color.diff-highlight.newHighlight "green bold 22"
+
+git config --global color.diff.meta       "yellow"
+git config --global color.diff.frag       "magenta bold"
+git config --global color.diff.commit     "yellow bold"
+git config --global color.diff.old        "red bold"
+git config --global color.diff.new        "green bold"
+git config --global color.diff.whitespace "red reverse"
+
