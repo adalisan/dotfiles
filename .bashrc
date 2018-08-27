@@ -175,3 +175,4 @@ source $BASH_IT/bash_it.sh
 export DISPLAY=:0
 source $HOME/.bash_wsl
 PATH=~/bin:$PATH
+#[ -n "$PS1" ] && source ~/.bash_profile;

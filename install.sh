@@ -10,33 +10,33 @@ function linkDotFiles() {
 
     echo "Linking required dotfiles ...";
 
-	# Link the files from source to the target with a dot appended to the front.
-	find $SOURCE_LOCATION -mindepth 1 -maxdepth 1 -name '.*'| while read file; do
-		if [[ $(basename $file) != ".git" && $(basename $file) != ".gitignore" && $(basename $file) != ".gitmodules"]]; then
-      		if [[ -d ${HOME}/$(basename $file) ]]; then
-      			echo "${NC}$(basename $file)${NC} is a driectory, ${red}removing a directory now ..${NC}"
-      			rm -r "${HOME}/$(basename $file)"
-      		elif [[ -f ${HOME}/$(basename $file) ]]; then
-      			echo "${magenta}$(basename $file)${NC} is found, ${red}deleting and overwriting now!${NC}"
-      			rm "${HOME}/$(basename $file)"
-    		else
-				echo "${magenta}$(basename $file)${NC} does not exist"
-			fi
-    		echo "Linking ${magenta}$file${NC} to ${magenta}$TARGET_LOCATION/$(basename $file)${NC}"
-    	    ln -s "$file" "${HOME}/$(basename $file)"
+    # Link the files from source to the target with a dot appended to the front.
+    find $SOURCE_LOCATION -mindepth 1 -maxdepth 1 -name '.*'| while read file; do
+        if [[ $(basename $file) != ".git" && $(basename $file) != ".gitignore" && $(basename $file) != ".gitmodules"]]; then
+              if [[ -d ${HOME}/$(basename $file) ]]; then
+                  echo "${NC}$(basename $file)${NC} is a driectory, ${red}removing a directory now ..${NC}"
+                  rm -r "${HOME}/$(basename $file)"
+              elif [[ -f ${HOME}/$(basename $file) ]]; then
+                  echo "${magenta}$(basename $file)${NC} is found, ${red}deleting and overwriting now!${NC}"
+                  rm "${HOME}/$(basename $file)"
+            else
+                echo "${magenta}$(basename $file)${NC} does not exist"
+            fi
+            echo "Linking ${magenta}$file${NC} to ${magenta}$TARGET_LOCATION/$(basename $file)${NC}"
+            ln -s "$file" "${HOME}/$(basename $file)"
 
         fi
-	done
+    done
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
-	linkDotFiles;
+    linkDotFiles;
 else
-	read -p "This may overwrite existing files in your home directory. Are you sure? [Y/N] " -n 1;
-	echo "";
-	if [[ $REPLY =~ ^[Yy]$ ]]; then
-		linkDotFiles;
-	fi;
+    read -p "This may overwrite existing files in your home directory. Are you sure? [Y/N] " -n 1;
+    echo "";
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        linkDotFiles;
+    fi;
 fi;
 unset linkDotFiles;
 
@@ -49,9 +49,9 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
       echo " --> dircolors installation dirctory found, removing and linking again ..";
       rm "${HOME}/.dircolors"
     fi
-	if [[ -f "$SOURCE_LOCATION/dircolors/LS_COLORS" ]];
+    if [[ -f "$SOURCE_LOCATION/dircolors/LS_COLORS" ]];
     ln -s "$SOURCE_LOCATION/dircolors/LS_COLORS" "${HOME}/.dircolors"
-	else
-	echo " --> dircolors/LS_COLORS file does not exist ..";
-	fi
+    else
+    echo " --> dircolors/LS_COLORS file does not exist ..";
+    fi
 fi;

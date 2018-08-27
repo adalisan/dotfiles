@@ -5,7 +5,7 @@ function pip_install_globals() {
     sudo pip install $global
     else
     pip install --user $global
-    fi 
+    fi
   done
 }
 

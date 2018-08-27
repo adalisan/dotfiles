@@ -1,5 +1,5 @@
 [init]
-   templatedir = ~/.git_template       
+   templatedir = ~/.git_template
 [alias]
 
 	# View abbreviated SHA, description, and history graph of the latest 20 commits
@@ -85,8 +85,8 @@
 	trustctime = false
 
 	precomposeunicode = false
-	editor = micro
 
+	editor = micro
 
 [color]
 
@@ -185,7 +185,7 @@
 	oldHighlight = red bold 52
 	newNormal = green bold
 	newHighlight = green bold 22
-	
+
 [rerere]
     enabled = true
 [push]
