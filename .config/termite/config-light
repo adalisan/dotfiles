@@ -1,0 +1,70 @@
+[options]
+#https://github.com/thestinger/termite/blob/master/config
+allow_bold = true
+audible_bell = false
+browser = xdg-open
+clickable_url = true
+cursor_blink = system
+cursor_shape = block
+dynamic_title = true
+filter_unmatched_urls = true
+font = M+ 1mn 8
+geometry = 480x280
+icon_name = terminal
+modify_other_keys = false
+mouse_autohide = false
+scroll_on_output = false
+scroll_on_keystroke = true
+scrollback_lines = 15000
+size_hints = false
+search_wrap = true
+urgent_on_bell = true
+highlight = #ff0000
+
+# ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#             I forget what color scheme is this             +
+#                        Maybe Monokai?                      +
+# 				Nevermind, this just look nice               +
+# 				                                             +
+# 				            Cheers!!                         +
+# 				              Addy                           +
+# ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+[colors]
+foreground = #474c57
+background = #ffffff
+foreground_bold = #3f444f
+cursor = #fec7cd
+cursor_foreground = #474c57
+
+# black // light grey
+color0  = #737a8a
+color8  = #636a7a
+
+# red // froly
+color1  = #ef6b7b
+color9  = #e76373
+
+# green // mantis
+color2  = #a1d569
+color10 = #99cd61
+
+# yellow // sun
+color3  = #f59335
+color11 = #ed8b2d
+
+# blue // polorous
+color4  = #4ec2e8
+color12 = #46bae0
+
+# magenta // azalea
+color5  = #fec7cd
+color13 = #f6bfc5
+
+# cyan // sinbad
+color6  = #95c1c0
+color14 = #8db9b8
+
+# white // dim gray
+color7  = #dde1e8
+color15 = #d5d9e0
