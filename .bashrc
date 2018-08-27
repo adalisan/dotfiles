@@ -1,51 +1,8 @@
 # -*- sh -*-
 
-unset module
-# Source global definitions.
-if [[ -f /etc/bashrc ]]; then
-    source /etc/bashrc
-fi
-#export DESKTOP=GNOME
-#PREFERRED=/usr/bin/gnome-session
-#export LIBGL_ALWAYS_INDIRECT=1
-#export GNOME_SHELL_SESSION_MODE=classic
-
-#echo "Sourcing BBN stuff"
-source $HOME/.bash_bbn
-
-export USE_BREW=0
-if [[ $USE_BREW -eq 1 ]]; then
-# echo "Using linuxbrew"
-  source ~/.bash_brew
-fi
-
-# Set Xterm/screen/Tmux title with only a short hostname.
-# Uncomment this (or set SHORT_HOSTNAME to something else),
-# Will otherwise fall back on $HOSTNAME.
-export SHORT_HOSTNAME=$(hostname -s)
-
-#alias sh=bash
-
-# Don't check mail when opening terminal.
-unset MAILCHECK
-unset color_prompt force_color_prompt
-
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
-
-
-
-# Set this to false to turn off version control status checking within the prompt for all themes
-export SCM_CHECK=true
-
-
-
+# ~/.bashrc: executed by bash(1) for non-login shells.
+# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+# for examples
 
 # Your place for hosting Git repos. I use this for private repos.
 export GIT_HOSTING='git@github.com'
@@ -166,13 +123,29 @@ export ZSH_SHELL=$(command -v zsh)
 #echo "z shell is available at $ZSH_SHELL"
 #exec $ZSH_SHELL
 #fi
+# Path to the bash it configuration
+export BASH_IT="$HOME/.bash_it"
+
+# Lock and Load a custom theme file
+# location /.bash_it/themes/
+export BASH_IT_THEME='colourful'
+#export BASH_IT_THEME='powerline-multiline'
 
 
+# Your place for hosting Git repos. I use this for private repos.
+export GIT_HOSTING='git@github.com'
 
-# Load Bash It
-source $BASH_IT/bash_it.sh
-#-[ -n "$PS1" ] && source ~/.bash_profile;
+# Don't check mail when opening terminal.
+unset MAILCHECK
+
+# Set this to the command you use for todo.txt-cli
+export TODO="t"
+
+# Set this to false to turn off version control status checking within the prompt for all themes
+export SCM_CHECK=true
+
 export DISPLAY=:0
 source $HOME/.bash_wsl
 PATH=~/bin:$PATH
-#[ -n "$PS1" ] && source ~/.bash_profile;
+
+source $BASH_IT/bash_it.sh
