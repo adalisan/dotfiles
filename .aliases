@@ -109,6 +109,7 @@ alias c="tr -d '\n' | pbcopy"
 # URL-encode strings
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
 alias pklprint='python -c "import sys, cPickle as pkl; print (pkl.load(open(sys.argv[1], \"rb\" )));"'
+alias pklprint_imgdb='python -c "import sys, cPickle as pkl;sys.path.append(\"/home/sadali/pr/aida_redux/video/visual-concept-detection/visual-concept-MIL-sequence/bin/code\");print(sys.path);import img_db;print (pkl.load(open(sys.argv[1], \"rb\" )));"'
 
 # Merge PDF files
 # Usage: `mergepdf -o output.pdf input{1,2,3}.pdf`
