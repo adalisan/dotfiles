@@ -103,6 +103,7 @@ export GAIA_INTERCHANGE=/nfs/mercury-11/u125/sadali/projects/gaia-interchange
 echo "My variables"
 echo $(env | grep 'MY')
 
+shopt -s histappend
 
 git config --global color.ui true
 
