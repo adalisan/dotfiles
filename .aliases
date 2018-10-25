@@ -18,7 +18,7 @@ alias h="history"
 alias j="jobs"
 alias subl="sublime"
 alias vscode="code"
-
+alias log_timing="/d4m/ears/releases/Cube2/R2015_09_11/install-optimize-x86_64/scripts/lf_exp_time.pl"
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
 	colorflag="--color"
