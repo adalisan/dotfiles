@@ -127,3 +127,8 @@ precomposeunicode = false
 	old = red bold
 	new = green bold
 	whitespace = red reverse
+	
+[rerere]
+    enabled = true
+[push]
+    default = nothing
