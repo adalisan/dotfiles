@@ -105,7 +105,7 @@ precomposeunicode = false
 	# Prevent showing files whose names contain non-ASCII symbols as unversioned.
 	# http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
 	precomposeunicode = false
-	editor = "vi"
+	editor = "nano"
 
 [color]
 
@@ -137,11 +137,6 @@ precomposeunicode = false
 	# https://help.github.com/articles/signing-commits-using-gpg/
 	gpgsign = false
 
-[diff]
-
-	# Detect copies as well as renames
-	renames = copies
-	tool = Kaleidoscope
 
 [diff "bin"]
 
@@ -153,11 +148,6 @@ precomposeunicode = false
 	# Automatically correct and execute mistyped commands
 	autocorrect = 1
 
-[merge]
-
-	# Include summaries of merged commits in newly created merge commit messages
-	log = true
-	tool = Kaleidoscope
 
 [push]
 
@@ -190,12 +180,6 @@ precomposeunicode = false
 [user]
 	name = Sancar Adali
 	email = sadali+git@gmail.com
-[difftool "Kaleidoscope"]
-	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
-	prompt = false
-[mergetool "Kaleidoscope"]
-	cmd = /usr/local/bin/ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-	trustExitCode = true
 [mergetool]
 	keepTemporaries = false
 	prompt = false
@@ -204,18 +188,10 @@ precomposeunicode = false
 	required = true
 	clean = git media clean %f
 	smudge = git media smudge %f
-[difftool "sourcetree"]
-	cmd = /usr/local/bin/ksdiff -w \"$LOCAL\" \"$REMOTE\"
-	path =
-[mergetool "sourcetree"]
-	cmd = /usr/local/bin/ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-	trustExitCode = true
 [filter "hawser"]
 	clean = git hawser clean %f
 	smudge = git hawser smudge %f
 	required = true
-[commit]
-	template = $HOME/.git_commit_message.txt
 [filter "lfs"]
 	smudge = git-lfs smudge %f
 	required = true

@@ -5,9 +5,10 @@ function pip_install_globals() {
   done
 }
 
+# Start the actual installation of the recipes
 globals=(
-pandas
-networkx
+  pandas
+  networkx
 )
 
 # Start the actual installation of the recipes
