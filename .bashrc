@@ -33,6 +33,11 @@ fi
 # #powerline
 # export PATH=/home/sadali/xiki/bin:$PATH
 
+PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+export PS1="$RED.:$GREEN\u@\h$RED:. $BLUE\w$GREEN${CONDA_DEFAULT_ENV}$RED"' $(__git_ps1 " (%s)") '"\$$END "
+#export  PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
+
 #export POWERLINE=/nfs/mercury-11/u113/local/anaconda/lib/python2.7/site-packages
 # #. $POWERLINE/powerline/bindings/bash/powerline.sh
 # #source ~/.bash-powerline.sh
@@ -77,9 +82,6 @@ export GIT_HOSTING='git@github.com'
 # Set this to the command you use for todo.txt-cli
 export TODO="t"
 
-# Set vcprompt executable path for scm advance info in prompt (demula theme)
-# https://github.com/djl/vcprompt
-#export VCPROMPT_EXECUTABLE=~/.vcprompt/bin/vcprompt
 
 echo -ne "Today is "; date
 echo -e ""; cal ;
@@ -89,7 +91,7 @@ echo -e ""; cal ;
 #source $BASH_IT/bash_it.sh
 
 
-VNCCONFIG=`which  vncconfig`
+export VNCCONFIG=`which  vncconfig`
 if [[ -z $VNCCONFIG  ]]; then
 vncconfig -iconic &
 fi
@@ -119,3 +121,5 @@ git config --global color.diff.old        "red bold"
 git config --global color.diff.new        "green bold"
 git config --global color.diff.whitespace "red reverse"
 
+export PATH=/home/sadali/.toolsforai/RuntimeSDK/cntk/cntk/bin:$PATH
+export LD_LIBRARY_PATH=/home/sadali/.toolsforai/RuntimeSDK/cntk/cntk/lib:/home/sadali/.toolsforai/RuntimeSDK/cntk/cntk/dependencies/lib:$LD_LIBRARY_PATH
