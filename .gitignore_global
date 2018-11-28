@@ -25,7 +25,7 @@ Desktop.ini
 # from sublime text editor
 package.sublime-workspace# global gitignore to be excluded in all git files
 #
-# this should be portable for everyone so do not 
+# this should be portable for everyone so do not
 # add to exclude specific files (e.g.'*.o').
 *.lock
 *.swp
