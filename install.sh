@@ -29,6 +29,7 @@ else
 fi;
 unset linkDotFiles;
 
+
 if [[ ! -e ${HOME}/.dircolors ]]; then
 	# Prompt the user if he wishes to have dircolors enabled
 	echo "${magenta}\nDircolors${NC} helps applying different colors for file groups when executing ${red}ls${NC}\n"
@@ -66,3 +67,13 @@ source "`brew --prefix grc`/etc/grc.bashrc""
 source "`brew --prefix grc`/etc/grc.bashrc""
 	fi;
 
+printf "\nSwitch default shell to zsh?\n"
+read -p "This will enable zsh. Are you sure? [Y/N]" -n 1;
+printf "";
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    if [[ -f "${HOME}/.zshrc" ]]; then
+      echo " --> zshrc rc found, backing up ..";
+      mv "${HOME}/.zshrc" "${HOME}/.zshrc.bak"
+    fi
+    . "$SOURCE_LOCATION/zshrc/link.sh"
+fi;
