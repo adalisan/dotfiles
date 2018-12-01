@@ -67,13 +67,15 @@ source "`brew --prefix grc`/etc/grc.bashrc""
 source "`brew --prefix grc`/etc/grc.bashrc""
 	fi;
 
-printf "\nSwitch default shell to zsh?\n"
-read -p "This will enable zsh. Are you sure? [Y/N]" -n 1;
-printf "";
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-    if [[ -f "${HOME}/.zshrc" ]]; then
-      echo " --> zshrc rc found, backing up ..";
-      mv "${HOME}/.zshrc" "${HOME}/.zshrc.bak"
-    fi
-    . "$SOURCE_LOCATION/zshrc/link.sh"
-fi;
+
+# Prompt the user if he wishes to have dircolors enabled
+# printf "\nDircolors helps applying different colors for file groups when executing ls\n"
+# read -p "This will enable dircolors. Are you sure? [Y/N]" -n 1;
+# printf "";
+# if [[ $REPLY =~ ^[Yy]$ ]]; then
+#     if [[ -f "${HOME}/.dircolors" ]]; then
+#       echo " --> dircolors installation dirctory found, removing and linking again ..";
+#       rm "${HOME}/.dircolors"
+#     fi
+#     ln -s "$SOURCE_LOCATION/dircolors/LS_COLORS" "${HOME}/.dircolors"
+#fi;
