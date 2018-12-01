@@ -55,3 +55,14 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     echo " --> dircolors/LS_COLORS file does not exist ..";
     fi
 fi;
+
+printf "\nSwitch default shell to zsh?\n"
+read -p "This will enable zsh. Are you sure? [Y/N]" -n 1;
+printf "";
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    if [[ -f "${HOME}/.zshrc" ]]; then
+      echo " --> zshrc rc found, backing up ..";
+      mv "${HOME}/.zshrc" "${HOME}/.zshrc.bak" 
+    fi
+    . "$SOURCE_LOCATION/zshrc/link.sh" 
+fi;
