@@ -1,13 +1,12 @@
 #!/usr/bin/env bash
-# -*- sh -*-
 
-
+unset module
 # Source global definitions.
 if [[ -f /etc/bashrc ]]; then
     . /etc/bashrc
 fi
 echo "Sourcing BBN stuff"
-source /home/sadali/.bash_bbn
+source $HOME/.bash_bbn
 
 export USE_BREW=0
 if [[ $USE_BREW -eq 1 ]]; then
@@ -15,17 +14,15 @@ if [[ $USE_BREW -eq 1 ]]; then
   source ~/.bash_brew
 fi
 
+# Set Xterm/screen/Tmux title with only a short hostname.
+# Uncomment this (or set SHORT_HOSTNAME to something else),
+# Will otherwise fall back on $HOSTNAME.
+export SHORT_HOSTNAME=$(hostname -s)
+
+#alias sh=bash
 
 
-# Path to the bash it configuration
 
-# # Requirements for caffe builds
-
-export LD_LIBRARY_PATH=/opt/x264-snapshot-20140708-2245-stable-x86_64/lib:$LD_LIBRARY_PATH
-if [[ `hostname -s` == "ag400" ]]; then
-export LD_LIBRARY_PATH=/usr/lib64:$LD_LIBRARY_PATH
-echo "added /usr/lib64 to ld library path so that DE runs with right GL libraries linked to latest nvidia  libs on ag400"
-fi
 ##########################
 ## THEMING and CUSTOMIZATION
 ############
@@ -38,9 +35,16 @@ PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 export PS1="$RED.:$GREEN\u@\h$RED:. $BLUE\w$GREEN${CONDA_DEFAULT_ENV}$RED"' $(__git_ps1 " (%s)") '"\$$END "
 #export  PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
 
+# Stop here for an non-interactive shell.
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
 #export POWERLINE=/nfs/mercury-11/u113/local/anaconda/lib/python2.7/site-packages
-# #. $POWERLINE/powerline/bindings/bash/powerline.sh
-# #source ~/.bash-powerline.sh
+#. $POWERLINE/powerline/bindings/bash/powerline.sh
+echo "powerline prompt enabled"
+source ~/.bash-powerline.sh
 
 
 # Path to the bash it configuration
@@ -63,14 +67,8 @@ unset MAILCHECK
 # Set this to false to turn off version control status checking within the prompt for all themes
 export SCM_CHECK=true
 
-# Set Xterm/screen/Tmux title with only a short hostname.
-# Uncomment this (or set SHORT_HOSTNAME to something else),
-# Will otherwise fall back on $HOSTNAME.
-export SHORT_HOSTNAME=$(hostname -s)
 
-# Set vcprompt executable path for scm advance info in prompt (demula theme)
-# https://github.com/djl/vcprompt
-#export VCPROMPT_EXECUTABLE=~/.vcprompt/bin/vcprompt
+
 
 # (Advanced): Uncomment this to make Bash-it reload itself automatically
 # after enabling or disabling aliases, plugins, and completions.
@@ -82,7 +80,6 @@ export GIT_HOSTING='git@github.com'
 # Set this to the command you use for todo.txt-cli
 export TODO="t"
 
-
 echo -ne "Today is "; date
 echo -e ""; cal ;
 
@@ -90,18 +87,6 @@ echo -e ""; cal ;
 #echo "Sourcing bash it at $BASH_IT"
 #source $BASH_IT/bash_it.sh
 
-
-export VNCCONFIG=`which  vncconfig`
-if [[ -z $VNCCONFIG  ]]; then
-vncconfig -iconic &
-fi
-#source $RAID/local/buetext/bash/bash_functions
-#[ -n "$PS1" ] && source ~/.bash_profile;
-
-#export FFMPEG_BIN=`which ffmpeg`
-export GAIA_INTERCHANGE=/nfs/mercury-11/u125/sadali/projects/gaia-interchange
-#sh -c "em-show --entered-by sadali > ~/my_experiments" 2>/dev/null &
-#export PATH=/home/sadali/bin:$PATH
 echo "My variables"
 echo $(env | grep 'MY')
 
@@ -123,3 +108,4 @@ git config --global color.diff.whitespace "red reverse"
 
 export PATH=/home/sadali/.toolsforai/RuntimeSDK/cntk/cntk/bin:$PATH
 export LD_LIBRARY_PATH=/home/sadali/.toolsforai/RuntimeSDK/cntk/cntk/lib:/home/sadali/.toolsforai/RuntimeSDK/cntk/cntk/dependencies/lib:$LD_LIBRARY_PATH
+source ~/.aliases
