@@ -129,4 +129,5 @@ export SCM_CHECK=true
 export DISPLAY=:0
 source $HOME/.bash_wsl
 PATH=~/bin:$PATH
-#source $BASH_IT/bash_it.sh
+
+source $BASH_IT/bash_it.sh
