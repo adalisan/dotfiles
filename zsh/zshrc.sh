@@ -7,7 +7,6 @@ else
 fi
 
 # Settings
-export VISUAL=vim
 export ZSH_DIR=$HOME/configurations-linux/dotfiles/zsh
 source $ZSH_DIR/plugins/fixls.zsh
 
@@ -77,6 +76,5 @@ export RIPGREP_CONFIG_PATH="$HOME"/.ripgreprc
 # fzf (managed by fzf):
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Google Cloud platform (managed by the Google Cloud SDK)
-if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then source "$HOME/google-cloud-sdk/path.zsh.inc"; fi
-if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then source "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
+
+export PATH=$HOME/bin:$HOME/.local/bin:$HOME/go/bin:$PATH

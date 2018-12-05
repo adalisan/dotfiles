@@ -123,3 +123,5 @@ export BASH_IT_THEME='colourful'
 export PATH=/usr/local/anaconda3/bin:$PATH
 source $BASH_IT/bash_it.sh
 -[ -n "$PS1" ] && source ~/.bash_profile;
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
