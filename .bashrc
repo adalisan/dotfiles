@@ -131,3 +131,5 @@ source $HOME/.bash_wsl
 PATH=~/bin:$PATH
 
 source $BASH_IT/bash_it.sh
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
