@@ -12,6 +12,8 @@ else
 	echo "tmux not installed. Run ./deploy to configure dependencies"
 fi
 
+# Settings
+export ZSH_DIR=$HOME/configurations-linux/dotfiles/zsh
 source $ZSH_DIR/plugins/fixls.zsh
 
 source $ZSH_DIR/plugins/oh-my-zsh/lib/history.zsh
@@ -81,3 +83,4 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+export PATH=$HOME/bin:$HOME/.local/bin:$HOME/go/bin:$PATH
