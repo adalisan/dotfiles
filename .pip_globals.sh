@@ -9,6 +9,7 @@ function pip_install_globals() {
 globals=(
   pandas
   networkx
+  lolviz
 )
 
 # Start the actual installation of the recipes
