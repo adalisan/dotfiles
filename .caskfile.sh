@@ -53,15 +53,12 @@ casks=(
   slack
   screenhero
   # Development
-  sublime-text3
-  atom
+  visual-studio-code
   sourcetree
   github
   brackets
-  coda
   tower
   transmission-remote-gui
-  macvim
   sqlite-database-browser
   lightpaper
   codebox
@@ -69,17 +66,12 @@ casks=(
   hex-fiend
   ksdiff
   codekit
-  mamp
   # Internet, Networking
   firefox
   google-chrome
   charles
   dropbox
   google-drive
-  mailbox
-  viber
-  utorrent
-  plex-media-server
   # Misc.
   vlc
   imagealpha
