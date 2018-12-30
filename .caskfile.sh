@@ -30,7 +30,6 @@ brew cask info this-is-somewhat-annoying 2>/dev/null
 # Homebrew casks
 casks=(
   # Utilities
-  path-finder
   alfred
   cakebrew
   a-better-finder-rename
@@ -40,18 +39,14 @@ casks=(
   launchrocket
   gyazo
   ubersicht
-  dockmod
   liteicon
   cleanmymac
   bartender
   flexiglass
   # Productivity
-  todoist
   evernote
-  mendeley-desktop
-  fantastical
+  Caskroom/cask/mendeley-desktop
   slack
-  screenhero
   # Development
   visual-studio-code
   sourcetree
@@ -59,9 +54,7 @@ casks=(
   brackets
   tower
   transmission-remote-gui
-  sqlite-database-browser
   lightpaper
-  codebox
   anvil
   hex-fiend
   ksdiff
@@ -90,7 +83,7 @@ casks=(
   quicklook-json
   quicknfo
   suspicious-package
-  webp-quicklook
+  webpquicklook
   # Color pickers
   colorpicker-developer
   colorpicker-skalacolor
@@ -103,7 +96,7 @@ if (( ${#casks[@]} > 0 )); then
   for cask in "${casks[@]}"; do
     brew cask install $cask
   done
-  brew cask cleanup
+  brew cleanup
 fi
 
 # Work around colorPicker symlink issue.
