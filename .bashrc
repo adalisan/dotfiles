@@ -120,6 +120,6 @@ export BASH_IT_THEME='colourful'
 #export DISPLAY=:0
 #source $HOME/.bash_wsl
 #PATH=~/bin:$PATH
-
+export PATH=/usr/local/anaconda3/bin:$PATH
 source $BASH_IT/bash_it.sh
 -[ -n "$PS1" ] && source ~/.bash_profile;
