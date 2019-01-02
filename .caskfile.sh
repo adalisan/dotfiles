@@ -13,7 +13,10 @@ function brew_tap_kegs() {
 }
 
 # Ensure the cask keg and recipe are installed.
-kegs=(caskroom/cask)
+kegs=(
+	caskroom/cask
+  homebrew/science
+)
 brew_tap_kegs
 
 # Exit if, for some reason, cask is not installed.
@@ -45,24 +48,19 @@ casks=(
   flexiglass
   # Productivity
   evernote
-  Caskroom/cask/mendeley-desktop
+  mendeley-desktop
   slack
   # Development
   visual-studio-code
   sourcetree
   github
-  brackets
-  tower
   transmission-remote-gui
   lightpaper
-  anvil
   hex-fiend
   ksdiff
-  codekit
   # Internet, Networking
   firefox
   google-chrome
-  charles
   dropbox
   google-drive
   # Misc.
@@ -87,6 +85,9 @@ casks=(
   # Color pickers
   colorpicker-developer
   colorpicker-skalacolor
+	# Scientific computing
+	rstudio
+	anaconda
 )
 
 # Install Homebrew casks.

@@ -33,8 +33,6 @@ recipes=(
   grc
   # Development
   git
-  heroku
-  mercurial
   mongodb
   # Git speific addons
   git-extras
@@ -56,13 +54,7 @@ recipes=(
   tmux
   sshrc
 	# Network tools
-	dns2tcp
-	knock
 	rename
-	webkit2png
-	# Dupes (https://github.com/Homebrew/homebrew-dupes)
-	homebrew/dupes/grep
-	homebrew/dupes/screen
 )
 
 # Start the actual installation of the recipes
@@ -70,7 +62,6 @@ brew_install_recipes
 
 # install recipes with special arguments
 brew install gnu-sed --default-names
-brew install vim --override-system-vi
 brew install wget --enable-iri
 # Remove outdated versions from the cellar
 brew cleanup
