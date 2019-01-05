@@ -23,4 +23,4 @@ Thumbs.db
 brew.sh
 bin/
 init/
-./local/share
+.local/share
