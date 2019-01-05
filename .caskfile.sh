@@ -88,6 +88,7 @@ casks=(
 	# Scientific computing
 	rstudio
 	anaconda
+	dotnet
 )
 
 # Install Homebrew casks.
