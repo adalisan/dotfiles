@@ -55,6 +55,8 @@ recipes=(
   sshrc
 	# Network tools
 	rename
+	npm
+	micro
 )
 
 # Start the actual installation of the recipes
