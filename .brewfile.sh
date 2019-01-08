@@ -57,6 +57,13 @@ recipes=(
 	rename
 	npm
 	micro
+	z
+	fzf
+	bench
+	ripgrep
+	ncdu
+	tig
+	thefuck
 )
 
 # Start the actual installation of the recipes
