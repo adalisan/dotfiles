@@ -1,0 +1,6 @@
+[submodule "dircolors"]
+		path = dircolors
+		url = https://github.com/ahmadassaf/dircolors.git
+[submodule "z"]
+	path = z
+	url = https://github.com/rupa/z.git
