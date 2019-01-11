@@ -167,7 +167,7 @@
 	insteadOf = "gist:"
 [user]
 	name = Sancar Adali
-	email = sadali@gmail.com
+	email = sadali+git@googlemail.com
 [difftool "Kaleidoscope"]
 	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 	prompt = false
