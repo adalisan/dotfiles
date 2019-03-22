@@ -44,8 +44,15 @@ chmod +x $newscript
 mi $newscript
 }
 
+function log_this () {
+${@: -1} | tee -a $1_runlog.txt
+	
+}
+
 function cenv() {
 conda activate $1
 }
 
+alias code="/export/u10/VSCode-linux-x64/code --extensions-dir=/export/u10/sadali/vscode/.vscode/extensions --user-data-dir=/export/u10/sadali/vscode/Code"
 source ~/.aliases
+alias gpu=nvidia-smi
