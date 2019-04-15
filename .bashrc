@@ -5,12 +5,12 @@ unset module
 if [[ -f /etc/bashrc ]]; then
     . /etc/bashrc
 fi
-echo "Sourcing BBN stuff"
+#echo "Sourcing BBN stuff"
 source $HOME/.bash_bbn
 
 export USE_BREW=0
 if [[ $USE_BREW -eq 1 ]]; then
-  echo "Using linuxbrew"
+  #echo "Using linuxbrew"
   source ~/.bash_brew
 fi
 
@@ -43,7 +43,7 @@ esac
 
 #export POWERLINE=/nfs/mercury-11/u113/local/anaconda/lib/python2.7/site-packages
 #. $POWERLINE/powerline/bindings/bash/powerline.sh
-echo "powerline prompt enabled"
+#echo "powerline prompt enabled"
 source ~/.bash-powerline.sh
 
 
@@ -121,8 +121,9 @@ export TODO="t"
 # Set this to false to turn off version control status checking within the prompt for all themes
 export SCM_CHECK=true
 
-PATH=~/bin:$PATH
+PATH=$HOME/bin:$PATH
 
 # Load Bash It
 
 #source $BASH_IT/bash_it.sh
+PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
