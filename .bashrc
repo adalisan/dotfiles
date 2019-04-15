@@ -88,6 +88,9 @@ echo -e ""; cal ;
 
 echo "My variables"
 echo $(env | grep 'MY')
+#-[ -n "$PS1" ] && source ~/.bash_profile;
+#export DISPLAY=:0
+#source $HOME/.bash_wsl
 
 shopt -s histappend
 
@@ -112,16 +115,12 @@ source ~/.aliases
 # Your place for hosting Git repos. I use this for private repos.
 export GIT_HOSTING='git@github.com'
 
-# Don't check mail when opening terminal.
-unset MAILCHECK
-
-# Set this to the command you use for todo.txt-cli
-export TODO="t"
 
 # Set this to false to turn off version control status checking within the prompt for all themes
 export SCM_CHECK=true
 
 PATH=$HOME/bin:$PATH
+
 
 # Load Bash It
 
