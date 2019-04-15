@@ -99,7 +99,7 @@ export SCM_CHECK=true
 
 # Load Bash It
 
-source $BASH_IT/bash_it.sh
+#source $BASH_IT/bash_it.sh
 #-[ -n "$PS1" ] && source ~/.bash_profile;
 #export DISPLAY=:0
 #source $HOME/.bash_wsl
@@ -120,6 +120,6 @@ git config --global color.diff.new        "green bold"
 git config --global color.diff.whitespace "red reverse"
 
 
-source $BASH_IT/bash_it.sh
+#source $BASH_IT/bash_it.sh
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
