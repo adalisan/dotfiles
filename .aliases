@@ -17,6 +17,7 @@ alias g="git"
 alias h="history"
 alias j="jobs"
 alias subl="sublime"
+alias wj="python2 ~/pr/watchjobs/watchjobs.py "
 alias vscode="/export/u10/VSCode-linux-x64/code --extensions-dir=/export/u10/sadali/vscode/.vscode/extensions --user-data-dir=/export/u10/sadali/vscode/Code"
 alias log_timing="/d4m/ears/releases/Cube2/R2015_09_11/install-optimize-x86_64/scripts/lf_exp_time.pl"
 # Detect which `ls` flavor is in use
@@ -92,3 +93,5 @@ alias reload="exec $SHELL -l"
 alias make=mmake
 
 alias new_py_project="cookiecutter gh:adalisan/cookiecutter-python-scientific -o ."
+alias condaenvs="conda info --envs"
+alias condapkgs="conda list"
