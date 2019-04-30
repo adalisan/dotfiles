@@ -17,7 +17,7 @@ alias g="git"
 alias h="history"
 alias j="jobs"
 alias subl="sublime"
-alias wj="python2 ~/pr/watchjobs/watchjobs.py "
+alias wj="python2 $RAID/projects/watchjobs/watchjobs.py "
 alias vscode="/export/u10/VSCode-linux-x64/code --extensions-dir=/export/u10/sadali/vscode/.vscode/extensions --user-data-dir=/export/u10/sadali/vscode/Code"
 alias log_timing="/d4m/ears/releases/Cube2/R2015_09_11/install-optimize-x86_64/scripts/lf_exp_time.pl"
 # Detect which `ls` flavor is in use
@@ -74,7 +74,7 @@ alias c="tr -d '\n' | pbcopy"
 # URL-encode strings
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
 alias pklprint='python -c "import sys; import  cPickle as pkl; print (pkl.load(open(sys.argv[1], \"rb\" )));"'
-alias pklprint_imgdb='python -c "import sys, cPickle as pkl;sys.path.append(\"/home/sadali/pr/aida_redux/video/visual-concept-detection/visual-concept-MIL-sequence/bin/code\");print(sys.path);import img_db;print (pkl.load(open(sys.argv[1], \"rb\" )));"'
+alias pklprint_imgdb='python -c "import sys, cPickle as pkl;sys.path.append(\"/nfs/mercury-11/u113/projects/aida_redux/video/visual-concept-detection/visual-concept-MIL-sequence/bin/code\");print(sys.path);import img_db;print (pkl.load(open(sys.argv[1], \"rb\" )));"'
 
 # Intuitive map function
 # For example, to list all directories that contain a certain file:
