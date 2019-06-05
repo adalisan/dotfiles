@@ -33,3 +33,4 @@ package.sublime-workspace# global gitignore to be excluded in all git files
 *.log
 *.DS_Store*
 .vscode*
+.vstags
