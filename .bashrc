@@ -3,14 +3,20 @@
 unset module
 # Source global definitions.
 if [[ -f /etc/bashrc ]]; then
-    . /etc/bashrc
+    source /etc/bashrc
 fi
+DESKTOP=GNOME
+PREFERRED=/usr/bin/gnome-session
+#eval `perl -I /nfs/mercury-11/u113/perl5/lib/perl5 -Mlocal::lib`
+export LIBGL_ALWAYS_INDIRECT=1
+export GNOME_SHELL_SESSION_MODE=classic
+
 #echo "Sourcing BBN stuff"
 source $HOME/.bash_bbn
 
 export USE_BREW=0
 if [[ $USE_BREW -eq 1 ]]; then
-  #echo "Using linuxbrew"
+# echo "Using linuxbrew"
   source ~/.bash_brew
 fi
 
@@ -20,46 +26,6 @@ fi
 export SHORT_HOSTNAME=$(hostname -s)
 
 #alias sh=bash
-
-
-
-##########################
-## THEMING and CUSTOMIZATION
-############
-
-# #powerline
-# export PATH=/home/sadali/xiki/bin:$PATH
-
-PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-export PS1="$RED.:$GREEN\u@\h$RED:. $BLUE\w$GREEN${CONDA_DEFAULT_ENV}$RED"' $(__git_ps1 " (%s)") '"\$$END "
-#export  PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
-
-# Stop here for an non-interactive shell.
-case $- in
-    *i*) ;;
-      *) return;;
-esac
-
-#export POWERLINE=/nfs/mercury-11/u113/local/anaconda/lib/python2.7/site-packages
-#. $POWERLINE/powerline/bindings/bash/powerline.sh
-#echo "powerline prompt enabled"
-source ~/.bash-powerline.sh
-
-
-# Path to the bash it configuration
-#export BASH_IT="/home/sadali/.bash_it"
-#export BASH_IT="/home/sadali/.bash_it_local"
-# Lock and Load a custom theme file
-# location /.bash_it/themes/
-
-#export BASH_IT_THEME='powerline-multiline'
-export BASH_IT_THEME='powerline-plain'
-#export BASH_IT_THEME='tylenol'
-
-# (Advanced): Change this to the name of your remote repo if you
-# cloned bash-it with a remote other than origin such as `bash-it`.
-# export BASH_IT_REMOTE='bash-it'
 
 # Don't check mail when opening terminal.
 unset MAILCHECK
@@ -80,6 +46,59 @@ export GIT_HOSTING='git@github.com'
 # Set this to the command you use for todo.txt-cli
 export TODO="t"
 
+
+shopt -s histappend
+
+export PATH=/home/sadali/.toolsforai/RuntimeSDK/cntk/cntk/bin:$PATH
+export LD_LIBRARY_PATH=/home/sadali/.toolsforai/RuntimeSDK/cntk/cntk/lib:/home/sadali/.toolsforai/RuntimeSDK/cntk/cntk/dependencies/lib:$LD_LIBRARY_PATH
+source ~/.aliases
+
+PATH=$HOME/bin:$PATH
+if [[ -e "/export/u10/sadali/miniconda3" ]]; then
+source /export/u10/sadali/miniconda3/etc/profile.d/conda.sh
+elif [[ -f $RAID/local/anaconda/etc/profile.d/conda.sh ]]; then
+source $RAID/local/anaconda/etc/profile.d/conda.sh
+else
+source /export/home/sadali/local/conda.sh
+fi
+
+# Stop here for an non-interactive shell.
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+
+##########################
+## THEMING and CUSTOMIZATION
+############
+
+# #powerline
+# export PATH=/home/sadali/xiki/bin:$PATH
+
+export PS1="$RED.:$GREEN\u@\h$RED:. $BLUE\w$GREEN${CONDA_DEFAULT_ENV}$RED"' $(__git_ps1 " (%s)") '"\$$END "
+#export  PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
+
+#export POWERLINE=/nfs/mercury-11/u113/local/anaconda/lib/python2.7/site-packages
+#. $POWERLINE/powerline/bindings/bash/powerline.sh
+echo "powerline prompt enabled"
+source ~/.bash-powerline.sh
+
+
+# Path to the bash it configuration
+#export BASH_IT="/home/sadali/.bash_it"
+#export BASH_IT="/home/sadali/.bash_it_local"
+# Lock and Load a custom theme file
+# location /.bash_it/themes/
+
+#export BASH_IT_THEME='powerline-multiline'
+export BASH_IT_THEME='powerline-plain'
+#export BASH_IT_THEME='tylenol'
+
+# (Advanced): Change this to the name of your remote repo if you
+# cloned bash-it with a remote other than origin such as `bash-it`.
+# export BASH_IT_REMOTE='bash-it'
+
 echo -ne "Today is "; date
 echo -e ""; cal ;
 
@@ -88,11 +107,7 @@ echo -e ""; cal ;
 
 echo "My variables"
 echo $(env | grep 'MY')
-#-[ -n "$PS1" ] && source ~/.bash_profile;
-#export DISPLAY=:0
-#source $HOME/.bash_wsl
 
-shopt -s histappend
 
 git config --global color.ui true
 
@@ -108,9 +123,6 @@ git config --global color.diff.old        "red bold"
 git config --global color.diff.new        "green bold"
 git config --global color.diff.whitespace "red reverse"
 
-export PATH=/home/sadali/.toolsforai/RuntimeSDK/cntk/cntk/bin:$PATH
-export LD_LIBRARY_PATH=/home/sadali/.toolsforai/RuntimeSDK/cntk/cntk/lib:/home/sadali/.toolsforai/RuntimeSDK/cntk/cntk/dependencies/lib:$LD_LIBRARY_PATH
-source ~/.aliases
 
 # Your place for hosting Git repos. I use this for private repos.
 export GIT_HOSTING='git@github.com'
@@ -119,10 +131,10 @@ export GIT_HOSTING='git@github.com'
 # Set this to false to turn off version control status checking within the prompt for all themes
 export SCM_CHECK=true
 
-PATH=$HOME/bin:$PATH
-
 
 # Load Bash It
 
 #source $BASH_IT/bash_it.sh
 PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
+export PATH=/home/sadali/.gem/ruby/2.2.0/bin:$PATH
+
