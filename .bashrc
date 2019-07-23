@@ -57,6 +57,7 @@ export BASH_IT_THEME='colourful'
 #source $HOME/.bash_wsl
 #PATH=~/bin:$PATH
 export PATH=/usr/local/anaconda3/bin:$PATH
+export PATH="$HOME/Downloads/platform-tools":$PATH
 #source $BASH_IT/bash_it.sh
 #[ -n "$PS1" ] && source ~/.bash_profile;
 

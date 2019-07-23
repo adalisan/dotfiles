@@ -30,3 +30,5 @@ Desktop.ini
 *.log
 *.DS_Store*
 .vscode*
+*.zip
+*.bkp
