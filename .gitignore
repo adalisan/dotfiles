@@ -24,3 +24,5 @@ brew.sh
 .bash_bbn
 bin/
 init/
+.local/share
+.config/*
