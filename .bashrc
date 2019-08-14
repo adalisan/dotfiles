@@ -54,12 +54,29 @@ export LD_LIBRARY_PATH=/home/sadali/.toolsforai/RuntimeSDK/cntk/cntk/lib:/home/s
 source ~/.aliases
 
 PATH=$HOME/bin:$PATH
+
+export ANACONDA_HOME="/nfs/mercury-12/u15/sadali/anaconda3"
+
 if [[ -e "/export/u10/sadali/miniconda3" ]]; then
-source /export/u10/sadali/miniconda3/etc/profile.d/conda.sh
-elif [[ -f $RAID/local/anaconda/etc/profile.d/conda.sh ]]; then
-source $RAID/local/anaconda/etc/profile.d/conda.sh
+   ANACONDA_HOME="/export/u10/sadali/miniconda3"
+   source /export/u10/sadali/miniconda3/etc/profile.d/conda.sh  # commented out by conda initialize
+   unset __conda_setup
 else
-source /export/home/sadali/local/conda.sh
+unset __conda_setup
+#  >>> conda initialize >>>
+#!! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/nfs/mercury-12/u15/sadali/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+  eval "$__conda_setup"
+else
+  if [ -f "/nfs/mercury-12/u15/sadali/anaconda3/etc/profile.d/conda.sh" ]; then
+      . "/nfs/mercury-12/u15/sadali/anaconda3/etc/profile.d/conda.sh"
+  else
+      export PATH="/nfs/mercury-12/u15/sadali/anaconda3/bin:$PATH"
+  fi
+fi
+unset __conda_setup
+#<<< conda initialize <<<
 fi
 
 # Stop here for an non-interactive shell.
@@ -137,4 +154,13 @@ export SCM_CHECK=true
 #source $BASH_IT/bash_it.sh
 PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 export PATH=/home/sadali/.gem/ruby/2.2.0/bin:$PATH
+
+export ZSH_SHELL=$(command -v zsh)
+
+echo $ZSH_SHELL
+if  [ -f "$ZSH_SHELL" ]; then
+echo "z shell is available at $ZSH_SHELL"
+#exec $ZSH_SHELL
+fi
+
 
