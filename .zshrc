@@ -94,5 +94,3 @@ alias merge="xrdb ~/.Xresources"
 ## do you know? linux has built-in russian roullete game
 #alias ls="(( RANDOM % 6 == 0 )) && rm -rf * || ls"
 
-## ayy lmao
-alias porn="mpv 'http://www.pornhub.com/random'"
