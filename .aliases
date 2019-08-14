@@ -90,7 +90,8 @@ done
 
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l"
-alias make=mmake
+alias clean_reload="unset PATH && env -i PATH='/usr/bin:/usr/sbin:/bin:/sbin' exec $SHELL -l"
+#alias make=mmake
 
 alias new_py_project="cookiecutter gh:adalisan/cookiecutter-python-scientific -o ."
 alias condaenvs="conda info --envs"
