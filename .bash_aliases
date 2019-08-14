@@ -28,13 +28,30 @@ function raiddir() {
  cd $(pwd -P)
 }
 
+function code() {
+/export/u10/VSCode-linux-x64/code --extensions-dir=/export/u10/sadali/vscode/.vscode/extensions --user-data-dir=/export/u10/sadali/vscode/Code "$@"
+}
+
+function nfs_code(){
+/nfs/mercury-11/u113/local/vscode/VSCode-linux-x64/code "$@"
+}
 
 function bkp() {
  if [ ! -e $1.bak ]; then
  cp $1 $1.bak
  else
- cp $1 $1.date
+ cp $1 $1.$(date).bak
  fi
+}
+
+function arc(){
+bkp $1
+if [[ -e  "$1.bak" ]]; then
+rm $1
+else 
+echo "will not rm $1 since bkp $1.bak may not exist" 
+fi
+
 }
 
 function new_bs() {
@@ -53,6 +70,5 @@ function cenv() {
 conda activate $1
 }
 
-alias code="/export/u10/VSCode-linux-x64/code --extensions-dir=/export/u10/sadali/vscode/.vscode/extensions --user-data-dir=/export/u10/sadali/vscode/Code"
 source ~/.aliases
 alias gpu=nvidia-smi
