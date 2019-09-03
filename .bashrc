@@ -5,9 +5,8 @@ unset module
 if [[ -f /etc/bashrc ]]; then
     source /etc/bashrc
 fi
-DESKTOP=GNOME
+export DESKTOP=GNOME
 PREFERRED=/usr/bin/gnome-session
-#eval `perl -I /nfs/mercury-11/u113/perl5/lib/perl5 -Mlocal::lib`
 export LIBGL_ALWAYS_INDIRECT=1
 export GNOME_SHELL_SESSION_MODE=classic
 
@@ -35,10 +34,6 @@ export SCM_CHECK=true
 
 
 
-
-# (Advanced): Uncomment this to make Bash-it reload itself automatically
-# after enabling or disabling aliases, plugins, and completions.
-# export BASH_IT_AUTOMATIC_RELOAD_AFTER_CONFIG_CHANGE=1
 
 # Your place for hosting Git repos. I use this for private repos.
 export GIT_HOSTING='git@github.com'
@@ -96,8 +91,6 @@ esac
 export PS1="$RED.:$GREEN\u@\h$RED:. $BLUE\w$GREEN${CONDA_DEFAULT_ENV}$RED"' $(__git_ps1 " (%s)") '"\$$END "
 #export  PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
 
-#export POWERLINE=/nfs/mercury-11/u113/local/anaconda/lib/python2.7/site-packages
-#. $POWERLINE/powerline/bindings/bash/powerline.sh
 echo "powerline prompt enabled"
 source ~/.bash-powerline.sh
 
@@ -162,5 +155,3 @@ if  [ -f "$ZSH_SHELL" ]; then
 echo "z shell is available at $ZSH_SHELL"
 #exec $ZSH_SHELL
 fi
-
-
