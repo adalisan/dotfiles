@@ -50,6 +50,7 @@ source ~/.aliases
 
 PATH=$HOME/bin:$PATH
 
+export MKL_INTERFACE_LAYER=LP64,GNU
 export ANACONDA_HOME="/nfs/mercury-12/u15/sadali/anaconda3"
 
 if [[ -e "/export/u10/sadali/miniconda3" ]]; then
@@ -115,8 +116,6 @@ echo -e ""; cal ;
 #echo "Sourcing bash it at $BASH_IT"
 #source $BASH_IT/bash_it.sh
 
-echo "My variables"
-echo $(env | grep 'MY')
 
 
 git config --global color.ui true
@@ -150,8 +149,7 @@ export PATH=/home/sadali/.gem/ruby/2.2.0/bin:$PATH
 
 export ZSH_SHELL=$(command -v zsh)
 
-echo $ZSH_SHELL
-if  [ -f "$ZSH_SHELL" ]; then
-echo "z shell is available at $ZSH_SHELL"
+#if  [ -f "$ZSH_SHELL" ]; then
+#echo "z shell is available at $ZSH_SHELL"
 #exec $ZSH_SHELL
-fi
+#fi
