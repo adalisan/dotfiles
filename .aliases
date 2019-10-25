@@ -86,7 +86,6 @@ for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
 	alias "$method"="lwp-request -m '$method'"
 done
 
-# Stuff I never really use but cannot delete either because of http://xkcd.com/530/
 
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l"

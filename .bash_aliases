@@ -23,6 +23,10 @@ function pr() {
  cd $(pwd -P)
 }
 
+function rpm_install(){
+rpm2cpio $1 | cpio -idmv
+}
+
 function raiddir() {
  pushd $RAID/$1
  cd $(pwd -P)
@@ -33,7 +37,7 @@ function code() {
 }
 
 function nfs_code(){
-/nfs/mercury-11/u113/local/vscode/VSCode-linux-x64/code "$@"
+$RAID/local/vscode/VSCode-linux-x64/code "$@"
 }
 
 function bkp() {
