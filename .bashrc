@@ -5,10 +5,10 @@ unset module
 if [[ -f /etc/bashrc ]]; then
     source /etc/bashrc
 fi
-export DESKTOP=GNOME
-PREFERRED=/usr/bin/gnome-session
-export LIBGL_ALWAYS_INDIRECT=1
-export GNOME_SHELL_SESSION_MODE=classic
+#export DESKTOP=GNOME
+#PREFERRED=/usr/bin/gnome-session
+#export LIBGL_ALWAYS_INDIRECT=1
+#export GNOME_SHELL_SESSION_MODE=classic
 
 #echo "Sourcing BBN stuff"
 source $HOME/.bash_bbn
@@ -86,13 +86,28 @@ esac
 ## THEMING and CUSTOMIZATION
 ############
 
-# #powerline
-# export PATH=/home/sadali/xiki/bin:$PATH
 
+
+PROMPT_COMMAND="history -a;history -r"
+# SHELL COLORS
+RED="\[\033[0;31m\]"
+YELLOW="\[\033[0;33m\]"
+GREEN="\[\033[0;32m\]"
+BLUE="\[\033[0;34m\]"
+END="\[\e[0m\]"
 export PS1="$RED.:$GREEN\u@\h$RED:. $BLUE\w$GREEN${CONDA_DEFAULT_ENV}$RED"' $(__git_ps1 " (%s)") '"\$$END "
 #export  PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
 
-echo "powerline prompt enabled"
+# Enable colors for ls, etc.  Prefer ~/.dir_colors #64489
+if [ -f ~/.dir_colors ]; then
+
+  eval $(dircolors -b ~/.dir_colors)
+#else
+#  eval `dircolors -b /etc/DIR_COLORS`
+fi
+
+
+# #powerline
 source ~/.bash-powerline.sh
 
 

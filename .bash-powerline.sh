@@ -116,4 +116,5 @@ __powerline() {
 }
 
 __powerline
+echo "powerline prompt enabled"
 unset __powerline
