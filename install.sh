@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+# Colors and visual Configurations
+export magenta='\e[0;35m'
+export red='\e[0;31m'
+export NC='\e[0m'
+
 # Find the location of the script, this brings out the location of the current directory
 export SCRIPT_DIRECTORY="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
@@ -42,18 +47,5 @@ if [[ ! -e ${HOME}/.dircolors ]]; then
 	echo "";
 	if [[ $REPLY =~ ^[Yy]$ ]]; then
 		ln -s "$SOURCE_LOCATION/dotfiles/dircolors/LS_COLORS" "${HOME}/.dircolors"
-
-		# Adding needed configurations to appearance.bash in bash-it
-		echo "Applying needed patched to ${red}appearance.bash${NC}"
-		echo "\n\n# Adding needed files for dircoloring
-export PATH=\"/usr/local/opt/coreutils/libexec/gnubin:\$PATH\"
-export MANPATH=\"/usr/local/opt/coreutils/libexec/gnuman:\$MANPATH\"
-# Enabling dircolors coloring
-eval \`gdircolors -b ~/.dircolors\`" >> "${HOME}/.bash_it/lib/appearance.bash"
-
-		# Adding needed configurations to theme-and-appearance in oh-my-zsh
-		echo "Applying needed patched to ${red}theme-and-appearance.zsh${NC}"
-		echo "\n\n# Enabling dircolors coloring
-eval \`gdircolors -b ~/.dircolors\`" >> "${HOME}/.oh-my-zsh/lib/theme-and-appearance.zsh"
 	fi;
 fi
