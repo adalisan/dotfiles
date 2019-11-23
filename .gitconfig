@@ -1,3 +1,5 @@
+[init]
+   templatedir = ~/.git_template       
 [alias]
 
 	# View abbreviated SHA, description, and history graph of the latest 20 commits
@@ -100,9 +102,9 @@
 	# Prevent showing files whose names contain non-ASCII symbols as unversioned.
 	# http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
 	precomposeunicode = false
-	editor = "nano"
 
 	# editor = micro
+	editor = nano
 
 [color]
 
@@ -190,3 +192,9 @@
 	smudge = git-lfs smudge %f
 	required = true
 	clean = git-lfs clean %f
+
+
+[alias]
+	# enabling git-gui. Source: https://stackoverflow.com/a/12608076
+	gui = !sh -c '/usr/local/git/libexec/git-core/git-gui'
+
