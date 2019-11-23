@@ -1,50 +1,113 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+"                                 ___     
+"        ___        ___          /__/\    
+"       /__/\      /  /\        |  |::\   
+"       \  \:\    /  /:/        |  |:|:\  
+"        \  \:\  /__/::\      __|__|:|\:\ 
+"    ___  \__\:\ \__\/\:\__  /__/::::| \:\
+"   /__/\ |  |:|    \  \:\/\ \  \:\~~\__\/
+"   \  \:\|  |:|     \__\::/  \  \:\      
+"    \  \:\__|:|     /__/:/    \  \:\     
+"     \__\::::/      \__\/      \  \:\    
+"         ~~~~                   \__\/    
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+ " Set compatibility to Vim only.
+set nocompatible
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-" Install the nerdTree
-Plugin 'scrooloose/nerdtree'
-" youcompleteme code completion
-Plugin 'valloric/youcompleteme'
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-" Plugin 'L9'
-" Git plugin not hosted on GitHub
-Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-Plugin 'file:///home/gmarik/path/to/plugin'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Install L9 and avoid a Naming conflict if you've already installed a
-" different version somewhere else.
-" Plugin 'ascenator/L9', {'name': 'newL9'}
+"Always show current position
+set ruler
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-autocmd vimenter * NERDTree
+" Turn on syntax highlighting.
+syntax on
+
+" Turn off modelines
+set modelines=0
+
+" Uncomment below to set the max textwidth. Use a value corresponding to the width of your screen.
+" set textwidth=80
+set formatoptions=tcqrn1
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+set noshiftround
+
+" Ignore case when searching
+set ignorecase
+
+" When searching try to be smart about cases 
+set smartcase
+
+" Don't redraw while executing macros (good performance config)
+set lazyredraw
+
+" For regular expressions turn magic on
+set magic
+
+" Display 5 lines above/below the cursor when scrolling with a mouse.
+set scrolloff=5
+" Fixes common backspace problems
+set backspace=indent,eol,start
+
+" Display options
+set showmode
+set showcmd
+set cmdheight=1
+
+" Highlight matching pairs of brackets. Use the '%' character to jump between them.
+set matchpairs+=<:>
+
+" Display different types of white spaces.
+"set list
+"set listchars=tab:›\ ,trail:•,extends:#,nbsp:.
+
+" Show line numbers
+set number
+highlight LineNr ctermfg=black
+
+" Set status line display
+set laststatus=2
+hi StatusLine ctermfg=NONE ctermbg=red cterm=NONE
+hi StatusLineNC ctermfg=black ctermbg=red cterm=NONE
+hi User1 ctermfg=black ctermbg=magenta
+hi User2 ctermfg=NONE ctermbg=NONE
+hi User3 ctermfg=black ctermbg=blue
+hi User4 ctermfg=black ctermbg=cyan
+set statusline=\                    " Padding
+set statusline+=%f                  " Path to the file
+set statusline+=\ %1*\              " Padding & switch colour
+set statusline+=%y                  " File type
+set statusline+=\ %2*\              " Padding & switch colour
+set statusline+=%=                  " Switch to right-side
+set statusline+=\ %3*\              " Padding & switch colour
+set statusline+=line                " of Text
+set statusline+=\                   " Padding
+set statusline+=%l                  " Current line
+set statusline+=\ %4*\              " Padding & switch colour
+set statusline+=of                  " of Text
+set statusline+=\                   " Padding
+set statusline+=%L                  " Total line
+set statusline+=\                   " Padding
+
+" Encoding
+set encoding=utf-8
+
+" Highlight matching search patterns
+set hlsearch
+
+" Enable incremental search
+set incsearch
+
+" Include matching uppercase words with lowercase search term
+set ignorecase
+
+" Include only uppercase words with uppercase search term
+set smartcase
+
+" Store info from no more than 100 files at a time, 9999 lines of text
+" 100kb of data. Useful for copying large amounts of data between files.
+set viminfo='100,<9999,s100
+
+
 " Use the Solarized Dark theme
 set background=dark
 colorscheme monokai
@@ -53,7 +116,6 @@ colorscheme monokai
 " set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim
 
 " These lines setup the environment to show graphics and colors correctly.
-set nocompatible
 
 let g:minBufExplForceSyntaxEnable = 1
 
