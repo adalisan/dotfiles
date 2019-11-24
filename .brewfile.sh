@@ -33,22 +33,10 @@ recipes=(
   grc
   # Development
   git
-  heroku
-  mercurial
-  mongodb
-  # Git speific addons
-  git-extras
-  hub
-  bfg
   # Utilities
   htop-osx
-  id3tool
-  lesspipe
-  ssh-copy-id
-  the_silver_searcher
   tree
   p7zip
-  pv
   tmux
 	# Network tools
 	dns2tcp

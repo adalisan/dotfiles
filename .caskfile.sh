@@ -14,7 +14,7 @@ function brew_tap_kegs() {
 
 # Ensure the cask keg and recipe are installed.
 kegs=(
-	caskroom/cask
+	homebrew/cask-cask
   homebrew/science
 )
 brew_tap_kegs
@@ -36,13 +36,8 @@ casks=(
   alfred
   cakebrew
   fastscripts
-  bettertouchtool
   iterm2
-  launchrocket
-  gyazo
   ubersicht
-  liteicon
-  flexiglass
   # Productivity
   evernote
   mendeley-desktop
@@ -65,14 +60,12 @@ casks=(
   spotify
   handbrake
   # Quick Look plugins
-  betterzipql
   qlcolorcode
   qlmarkdown
   quicklook-csv
   quicklook-json
   quicknfo
   suspicious-package
-  webpquicklook
 	# Scientific computing
 	rstudio
 	anaconda
