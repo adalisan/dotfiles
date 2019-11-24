@@ -47,22 +47,19 @@ recipes=(
   ssh-copy-id
   the_silver_searcher
   tree
-  fcrackzip
-  foremost
-  ack
   p7zip
-  pigz
   pv
   tmux
-  sshrc
 	# Network tools
 	dns2tcp
 	knock
 	rename
-	webkit2png
-	# Dupes (https://github.com/Homebrew/homebrew-dupes)
-	homebrew/dupes/grep
-	homebrew/dupes/screen
+	npm
+	micro
+	z
+	fzf
+	ripgrep
+	ncdu
 )
 
 # Start the actual installation of the recipes
