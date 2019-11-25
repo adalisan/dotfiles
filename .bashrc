@@ -144,6 +144,10 @@ export SCM_CHECK=true
 PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 export PATH=/home/sadali/.gem/ruby/2.2.0/bin:$PATH
 
+#on a trial basis
+
+source $HOME/sensible.bash
+
 export ZSH_SHELL=$(command -v zsh)
 
 #if  [ -f "$ZSH_SHELL" ]; then
