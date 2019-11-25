@@ -111,25 +111,8 @@ fi
 source ~/.bash-powerline.sh
 
 
-# Path to the bash it configuration
-#export BASH_IT="/home/sadali/.bash_it"
-#export BASH_IT="/home/sadali/.bash_it_local"
-# Lock and Load a custom theme file
-# location /.bash_it/themes/
-
-#export BASH_IT_THEME='powerline-multiline'
-export BASH_IT_THEME='powerline-plain'
-#export BASH_IT_THEME='tylenol'
-
-# (Advanced): Change this to the name of your remote repo if you
-# cloned bash-it with a remote other than origin such as `bash-it`.
-# export BASH_IT_REMOTE='bash-it'
-
 echo -ne "Today is "; date
 echo -e ""; cal ;
-
-#echo "Sourcing bash it at $BASH_IT"
-#source $BASH_IT/bash_it.sh
 
 
 
@@ -156,17 +139,8 @@ export GIT_HOSTING='git@github.com'
 export SCM_CHECK=true
 
 
-echo -ne "Today is "; date
+#monjobs
 
-echo -e ""; cal ;
-
-sg_list -srp -usadali
-
-alias myjobs='sg_list -srp -usadali'
-alias monjobs='watch sg_list -srp -usadali'
-# Load Bash It
-
-#source $BASH_IT/bash_it.sh
 PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 export PATH=/home/sadali/.gem/ruby/2.2.0/bin:$PATH
 
