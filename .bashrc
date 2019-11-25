@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+# -*- sh -*-
 
 unset module
 # Source global definitions.
@@ -156,6 +156,14 @@ export GIT_HOSTING='git@github.com'
 export SCM_CHECK=true
 
 
+echo -ne "Today is "; date
+
+echo -e ""; cal ;
+
+sg_list -srp -usadali
+
+alias myjobs='sg_list -srp -usadali'
+alias monjobs='watch sg_list -srp -usadali'
 # Load Bash It
 
 #source $BASH_IT/bash_it.sh
