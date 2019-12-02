@@ -28,6 +28,18 @@ export SHORT_HOSTNAME=$(hostname -s)
 
 # Don't check mail when opening terminal.
 unset MAILCHECK
+unset color_prompt force_color_prompt
+
+# If this is an xterm set the title to user@host:dir
+case "$TERM" in
+xterm*|rxvt*)
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    ;;
+*)
+    ;;
+esac
+
+
 
 # Set this to false to turn off version control status checking within the prompt for all themes
 export SCM_CHECK=true
