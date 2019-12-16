@@ -26,3 +26,5 @@ bin/
 init/
 .local/share
 .config/*
+*.bak
+*bak
