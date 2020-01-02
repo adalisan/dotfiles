@@ -53,7 +53,7 @@ PATH=$HOME/bin:$PATH
 export MKL_INTERFACE_LAYER=LP64,GNU
 export ANACONDA_HOME="/nfs/mercury-12/u15/sadali/anaconda3"
 
-if [[ -e "/export/u10/sadali/miniconda3" ]]; then
+if [[ -e "/export/u10/sadali/miniconda3/etc" ]]; then
    ANACONDA_HOME="/export/u10/sadali/miniconda3"
    source /export/u10/sadali/miniconda3/etc/profile.d/conda.sh  # commented out by conda initialize
    unset __conda_setup
@@ -154,3 +154,5 @@ export ZSH_SHELL=$(command -v zsh)
 #echo "z shell is available at $ZSH_SHELL"
 #exec $ZSH_SHELL
 #fi
+
+export KAGGLE_CONFIG_DIR=$RAID/.kaggle
