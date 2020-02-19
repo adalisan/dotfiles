@@ -95,3 +95,35 @@ alias clean_reload="unset PATH && env -i PATH='/usr/bin:/usr/sbin:/bin:/sbin' ex
 alias new_py_project="cookiecutter gh:adalisan/cookiecutter-python-scientific -o ."
 alias condaenvs="conda info --envs"
 alias condapkgs="conda list"
+alias check_pkg="rpm -qa"
+
+
+
+# latex
+alias rmtex='rm -f *.aux *.dvi *.lis *.log *.blg *.bbl *.toc *.idx *.ind *.ilg *.thm *.out *.fdb_latexmk *.fls *.synctex.gz *.nav *.snm'
+
+
+# misc - shared with linux
+PS_COMMAND="ps ax -o user,pid,pcpu,pmem,nice,stat,cputime,etime,command"
+alias nps="$PS_COMMAND"'|awk '"'"'NR==1||$3>0.5'"'"'|if [[ -t 1 ]];then (cat | cut -c 1-$COLUMNS);else cat;fi'
+alias cleanscreen='screen -ls | sed '"'"'1d;$d'"'"' | awk '"'"'{print $1}'"'"' |  xargs -I{} screen -S {} -X quit'
+alias pip-upgrade='pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U'
+alias rsync="rsync -av --exclude \".*\""
+
+alias R='R --no-save'
+alias r='radian'
+alias p='ipython'
+alias j='julia'
+alias jnb='jupyter notebook'
+alias jlab='jupyter lab'
+
+alias tm='tmux-manager'
+
+# for replace newline symbol
+alias fle="perl -pi -e 's/\r\n?/\n/g' "
+
+# otool
+[[ "$(uname)" == "Darwin" ]] && alias ldd="otool -L"
+
+[ -z $ZSH_VERSION ] && return
+# zsh alias
