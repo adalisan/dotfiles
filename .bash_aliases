@@ -12,6 +12,16 @@ export SCRIPTS="$RAID/projects/buetext_utils"
 alias execute="$PYTHON  $SCRIPTS/"
 alias executewhat='execute what'
 
+
+__git_ps1 ()
+{
+  local b="$(git symbolic-ref HEAD 2>/dev/null)";
+  if [ -n "$b" ]; then
+    printf " (%s)" "${b##refs/heads/}";
+  fi
+}
+
+
 function exp() {
   pushd /d4m/ears/expts/$1/sequences
 }
@@ -52,8 +62,8 @@ function arc(){
 bkp $1
 if [[ -e  "$1.bak" ]]; then
 rm $1
-else 
-echo "will not rm $1 since bkp $1.bak may not exist" 
+else
+echo "will not rm $1 since bkp $1.bak may not exist"
 fi
 
 }
@@ -67,7 +77,7 @@ mi $newscript
 
 function log_this () {
 ${@: -1} | tee -a $1_runlog.txt
-	
+
 }
 
 function cenv() {
