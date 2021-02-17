@@ -28,3 +28,6 @@ init/
 .config/*
 *.bak
 *bak
+*.jpg
+*.png
+
