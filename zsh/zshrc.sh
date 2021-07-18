@@ -1,25 +1,25 @@
 # Settings
 export VISUAL=nano
 export ZSH_DIR=$HOME/configurations-linux/dotfiles/zsh
-[[ -e ~/.profile ]] && emulate sh -c 'source ~/.profile'
+#[[ -e ~/.profile ]] && emulate sh -c 'source ~/.profile'
 emulate sh -c 'source ~/.aliases'
 emulate sh -c 'source ~/.bash_aliases'
 #emulate sh -c 'source ~/.bashrc'
 # How can I set my default shell to start up tmux https://unix.stackexchange.com/a/113768
-if command -v tmux>/dev/null; then
-	[ -z "$TMUX" ] && exec tmux
-else
-	echo "tmux not installed. Run ./deploy to configure dependencies"
-fi
+# if command -v tmux>/dev/null; then
+# 	[ -z "$TMUX" ] && exec tmux
+# else
+# 	echo "tmux not installed. Run ./deploy to configure dependencies"
+# fi
 
 # Settings
 export ZSH_DIR=$HOME/configurations-linux/dotfiles/zsh
 source $ZSH_DIR/plugins/fixls.zsh
 
 source $ZSH_DIR/plugins/oh-my-zsh/lib/history.zsh
-source $ZSH_DIR/plugins/oh-my-zsh/lib/key-bindings.zsh
+#source $ZSH_DIR/plugins/oh-my-zsh/lib/key-bindings.zsh
 source $ZSH_DIR/plugins/oh-my-zsh/lib/completion.zsh
-source $ZSH_DIR/plugins/vi-mode.plugin.zsh
+#source $ZSH_DIR/plugins/vi-mode.plugin.zsh
 source $ZSH_DIR/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZSH_DIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
@@ -70,14 +70,14 @@ export RIPGREP_CONFIG_PATH="$HOME"/.ripgreprc
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/sadali/local/anaconda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/sadali/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/sadali/local/anaconda/etc/profile.d/conda.sh" ]; then
-        . "/home/sadali/local/anaconda/etc/profile.d/conda.sh"
+    if [ -f "/home/sadali/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/sadali/opt/anaconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/sadali/local/anaconda/bin:$PATH"
+        export PATH="/home/sadali/opt/anaconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup

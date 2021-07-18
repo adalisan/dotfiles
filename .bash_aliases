@@ -22,14 +22,9 @@ __git_ps1 ()
 }
 
 
-function exp() {
-  pushd /d4m/ears/expts/$1/sequences
-}
-function vid_exp() {
- pushd /d4m/vid/expts/$1/sequences
-}
+
 function pr() {
- pushd $RAID/projects/$1
+ pushd $HOME/projects/$1
  cd $(pwd -P)
 }
 
@@ -42,13 +37,6 @@ function raiddir() {
  cd $(pwd -P)
 }
 
-function code() {
-/export/u10/VSCode-linux-x64/code --extensions-dir=/export/u10/sadali/vscode/.vscode/extensions --user-data-dir=/export/u10/sadali/vscode/Code "$@"
-}
-
-function nfs_code(){
-$RAID/local/vscode/VSCode-linux-x64/code "$@"
-}
 
 function bkp() {
  if [ ! -e $1.bak ]; then
